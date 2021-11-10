@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  nginx:
+    image: nginx:1.20
+    container_name: nginx-service
+    volumes:
+      - ./:/var/www
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+    networks:
+      - ngnix-network
+    depends_on:
+      - flask
+  flask:
+    image: dockerwebcamviasocketio_flask:latest
+    container_name: cnn-flask-service
+    command: python3 main.py
+    volumes:
+      - ./:/var/www
+    networks:
+      ngnix-network:
+        aliases:
+          - web-app
+
+networks:
+  ngnix-network:

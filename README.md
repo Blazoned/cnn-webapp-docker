@@ -10,14 +10,28 @@ De app wordt gelanceerd met twee containers: Een nginx container die het webverk
 ### Pre-Build
 
 Open de folder "cnn-webapp-docker (pre-build)" in een command prompt.
-Laadt vervolgens de voorgebouwde images in met het commando "docker load -i compose-images.tar"
+Voer het commando "tar -xvzf compose-images.tar.gz" uit.
+Laadt nadat dit klaar is de voorgebouwde images in met het commando "docker load -i compose-images.tar"
 Dit proces duurt even voordat deze tekst toont dat het laden geslaagd is.
 Voer vervolgens het commando "docker-compose up" of "docker compose up" uit (afhankelijk van welke versie van Docker is geïnstalleerd is).
+Open de webbrowser met het address "http://localhost"
+
+Om de app in de toekomst op te starten kunnen de stappen beschreven in "From-Scratch" worden gevolgd. Daarbij moet wel de folder "cnn-webapp-docker" worden vervangen door de folder gebruikt hierboven ("cnn-webapp-docker (pre-build)").
 
 ### From-Scratch
 
-Open de folder "cnn-webapp-docker (pre-build)" in een command prompt.
+Open de folder "cnn-webapp-docker" in een command prompt.
 Voer vervolgens het commando "docker-compose up" of "docker compose up" uit (afhankelijk van welke versie van Docker is geïnstalleerd is).
+Open de webbrowser met het address "http://localhost"
+
+### Windows Ná Pre-Build of From-Scratch
+
+In Windows met gebruik van Docker Desktop kan ook zonder het console de docker-app opnieuw worden geopend.
+Om dit te doen open Docker Desktop en ga naar de tab "Containers/Apps" in het linker menu.
+Zoek dan in het algemene scherm naar een docker-app genaamd "cnn-webapp-docker" of "cnn-webapp-docker(pre-build)"
+Beweeg de muis over de app en klik op de start knop.
+Klap vervolgens de app uit en houdt de muis over "nginx-service" en klik op de "open in browser" knop (icoon: vierkant met pijltje naar buiten).
+De website voor de app is nu geopend in de internet browser (adres: http://localhost)
 
 ## CNN Training
 
